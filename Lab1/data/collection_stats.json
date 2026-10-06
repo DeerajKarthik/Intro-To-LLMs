@@ -1,0 +1,140 @@
+{
+  "asm_Beng": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 15932,
+    "n_collected": 1000,
+    "seconds": 19.3
+  },
+  "ben_Beng": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 27420,
+    "n_collected": 1000,
+    "seconds": 13.6
+  },
+  "brx_Deva": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 12157,
+    "n_collected": 1000,
+    "seconds": 11.3
+  },
+  "doi_Deva": {
+    "n_paragraphs_scanned": 12342,
+    "n_valid_unique_sentences": 7391,
+    "n_collected": 1000,
+    "seconds": 4.6
+  },
+  "gom_Deva": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 16096,
+    "n_collected": 1000,
+    "seconds": 8.5
+  },
+  "guj_Gujr": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 21102,
+    "n_collected": 1000,
+    "seconds": 9.1
+  },
+  "hin_Deva": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 23873,
+    "n_collected": 1000,
+    "seconds": 9.0
+  },
+  "kan_Knda": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 18474,
+    "n_collected": 1000,
+    "seconds": 9.2
+  },
+  "kas_Arab": {
+    "n_paragraphs_scanned": 6486,
+    "n_valid_unique_sentences": 3949,
+    "n_collected": 1000,
+    "seconds": 4.3
+  },
+  "mai_Deva": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 15353,
+    "n_collected": 1000,
+    "seconds": 8.8
+  },
+  "mal_Mlym": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 24685,
+    "n_collected": 1000,
+    "seconds": 9.8
+  },
+  "mar_Deva": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 24910,
+    "n_collected": 1000,
+    "seconds": 12.9
+  },
+  "mni_Mtei": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 3228,
+    "n_collected": 1000,
+    "seconds": 5.9
+  },
+  "npi_Deva": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 16308,
+    "n_collected": 1000,
+    "seconds": 10.1
+  },
+  "ory_Orya": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 12160,
+    "n_collected": 1000,
+    "seconds": 10.6
+  },
+  "pan_Guru": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 19307,
+    "n_collected": 1000,
+    "seconds": 12.5
+  },
+  "san_Deva": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 43364,
+    "n_collected": 1000,
+    "seconds": 12.5
+  },
+  "snd_Deva": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 29816,
+    "n_collected": 1000,
+    "seconds": 11.8
+  },
+  "tam_Taml": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 24583,
+    "n_collected": 1000,
+    "seconds": 13.6
+  },
+  "tel_Telu": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 27360,
+    "n_collected": 1000,
+    "seconds": 10.8
+  },
+  "urd_Arab": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 20681,
+    "n_collected": 1000,
+    "seconds": 8.3
+  },
+  "khasi": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 9968,
+    "n_collected": 1000,
+    "seconds": 6.2
+  },
+  "santhali": {
+    "n_paragraphs_scanned": 15000,
+    "n_valid_unique_sentences": 6522,
+    "n_collected": 1000,
+    "seconds": 7.5
+  }
+}

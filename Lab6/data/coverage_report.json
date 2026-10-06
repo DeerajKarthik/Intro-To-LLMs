@@ -1,0 +1,117 @@
+{
+  "asm_Beng": {
+    "n_sentences": 1000,
+    "token_coverage": 0.8771920119488853,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "ben_Beng": {
+    "n_sentences": 1000,
+    "token_coverage": 0.8920458444856221,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "brx_Deva": {
+    "n_sentences": 1000,
+    "token_coverage": 0.9546300832925037,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "doi_Deva": {
+    "n_sentences": 1000,
+    "token_coverage": 0.9563046707377455,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "gom_Deva": {
+    "n_sentences": 1000,
+    "token_coverage": 0.936606562703054,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "guj_Gujr": {
+    "n_sentences": 1000,
+    "token_coverage": 0.8578680203045685,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "hin_Deva": {
+    "n_sentences": 1000,
+    "token_coverage": 0.961307229844304,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "kan_Knda": {
+    "n_sentences": 1000,
+    "token_coverage": 0.8396570884267344,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "kas_Arab": {
+    "n_sentences": 1000,
+    "token_coverage": 0.805063055516776,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "khasi": {
+    "n_sentences": 1000,
+    "token_coverage": 0.8774583963691377,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "mai_Deva": {
+    "n_sentences": 1000,
+    "token_coverage": 0.9251019219569016,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "mal_Mlym": {
+    "n_sentences": 1000,
+    "token_coverage": 0.8306201550387597,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "mar_Deva": {
+    "n_sentences": 1000,
+    "token_coverage": 0.9398547657038653,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "mni_Mtei": {
+    "n_sentences": 1000,
+    "token_coverage": 0.02742781739922712,
+    "pct_sentences_fully_oov": 0.865
+  },
+  "npi_Deva": {
+    "n_sentences": 1000,
+    "token_coverage": 0.924744399128443,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "ory_Orya": {
+    "n_sentences": 1000,
+    "token_coverage": 0.8482370975983649,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "pan_Guru": {
+    "n_sentences": 1000,
+    "token_coverage": 0.893698963340476,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "san_Deva": {
+    "n_sentences": 1000,
+    "token_coverage": 0.9181606055432247,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "santhali": {
+    "n_sentences": 1000,
+    "token_coverage": 0.01703708070506396,
+    "pct_sentences_fully_oov": 0.911
+  },
+  "snd_Deva": {
+    "n_sentences": 1000,
+    "token_coverage": 0.9210414452709883,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "tam_Taml": {
+    "n_sentences": 1000,
+    "token_coverage": 0.8623690719760588,
+    "pct_sentences_fully_oov": 0.001
+  },
+  "tel_Telu": {
+    "n_sentences": 1000,
+    "token_coverage": 0.9022724004027038,
+    "pct_sentences_fully_oov": 0.0
+  },
+  "urd_Arab": {
+    "n_sentences": 1000,
+    "token_coverage": 0.9672013749641937,
+    "pct_sentences_fully_oov": 0.001
+  }
+}

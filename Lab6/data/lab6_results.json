@@ -1,0 +1,884 @@
+{
+  "logreg_avgvec": {
+    "description": "Averaged FastText wiki vectors -> logistic regression",
+    "val_macro_f1": 0.8050199391095991,
+    "test_macro_f1": 0.8004363100978366,
+    "test_accuracy": 0.8147826086956522,
+    "per_class_test": {
+      "asm_Beng": {
+        "precision": 0.9900990099009901,
+        "recall": 1.0,
+        "f1": 0.9950248756218906,
+        "support": 100
+      },
+      "ben_Beng": {
+        "precision": 0.9801980198019802,
+        "recall": 0.99,
+        "f1": 0.9850746268656716,
+        "support": 100
+      },
+      "brx_Deva": {
+        "precision": 0.7835051546391752,
+        "recall": 0.76,
+        "f1": 0.7715736040609137,
+        "support": 100
+      },
+      "doi_Deva": {
+        "precision": 0.5603448275862069,
+        "recall": 0.65,
+        "f1": 0.6018518518518519,
+        "support": 100
+      },
+      "gom_Deva": {
+        "precision": 0.49382716049382713,
+        "recall": 0.4,
+        "f1": 0.4419889502762431,
+        "support": 100
+      },
+      "guj_Gujr": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "hin_Deva": {
+        "precision": 0.524822695035461,
+        "recall": 0.74,
+        "f1": 0.6141078838174274,
+        "support": 100
+      },
+      "kan_Knda": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "kas_Arab": {
+        "precision": 0.9705882352941176,
+        "recall": 0.99,
+        "f1": 0.9801980198019802,
+        "support": 100
+      },
+      "khasi": {
+        "precision": 0.9,
+        "recall": 0.99,
+        "f1": 0.9428571428571428,
+        "support": 100
+      },
+      "mai_Deva": {
+        "precision": 0.5967741935483871,
+        "recall": 0.37,
+        "f1": 0.45679012345679015,
+        "support": 100
+      },
+      "mal_Mlym": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "mar_Deva": {
+        "precision": 0.5473684210526316,
+        "recall": 0.52,
+        "f1": 0.5333333333333334,
+        "support": 100
+      },
+      "mni_Mtei": {
+        "precision": 0.625,
+        "recall": 0.05,
+        "f1": 0.09259259259259259,
+        "support": 100
+      },
+      "npi_Deva": {
+        "precision": 0.6666666666666666,
+        "recall": 0.66,
+        "f1": 0.6633165829145728,
+        "support": 100
+      },
+      "ory_Orya": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "pan_Guru": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "san_Deva": {
+        "precision": 0.6574074074074074,
+        "recall": 0.71,
+        "f1": 0.6826923076923077,
+        "support": 100
+      },
+      "santhali": {
+        "precision": 0.521978021978022,
+        "recall": 0.95,
+        "f1": 0.6737588652482269,
+        "support": 100
+      },
+      "snd_Deva": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "tam_Taml": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "tel_Telu": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "urd_Arab": {
+        "precision": 0.98989898989899,
+        "recall": 0.98,
+        "f1": 0.9849246231155778,
+        "support": 100
+      }
+    },
+    "train_seconds": 8.632983922958374
+  },
+  "mlp_1hidden_avgvec": {
+    "description": "Averaged FastText wiki vectors -> MLP (1 hidden layer(s))",
+    "val_macro_f1": 0.8182468920362866,
+    "test_macro_f1": 0.8120261709852504,
+    "test_accuracy": 0.8239130434782609,
+    "per_class_test": {
+      "asm_Beng": {
+        "precision": 0.9615384615384616,
+        "recall": 1.0,
+        "f1": 0.9803921568627451,
+        "support": 100
+      },
+      "ben_Beng": {
+        "precision": 0.9795918367346939,
+        "recall": 0.96,
+        "f1": 0.9696969696969697,
+        "support": 100
+      },
+      "brx_Deva": {
+        "precision": 0.8837209302325582,
+        "recall": 0.76,
+        "f1": 0.8172043010752689,
+        "support": 100
+      },
+      "doi_Deva": {
+        "precision": 0.6363636363636364,
+        "recall": 0.56,
+        "f1": 0.5957446808510639,
+        "support": 100
+      },
+      "gom_Deva": {
+        "precision": 0.47191011235955055,
+        "recall": 0.42,
+        "f1": 0.4444444444444445,
+        "support": 100
+      },
+      "guj_Gujr": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "hin_Deva": {
+        "precision": 0.5571428571428572,
+        "recall": 0.78,
+        "f1": 0.65,
+        "support": 100
+      },
+      "kan_Knda": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "kas_Arab": {
+        "precision": 0.99,
+        "recall": 0.99,
+        "f1": 0.99,
+        "support": 100
+      },
+      "khasi": {
+        "precision": 0.9074074074074074,
+        "recall": 0.98,
+        "f1": 0.9423076923076924,
+        "support": 100
+      },
+      "mai_Deva": {
+        "precision": 0.6265060240963856,
+        "recall": 0.52,
+        "f1": 0.5683060109289617,
+        "support": 100
+      },
+      "mal_Mlym": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "mar_Deva": {
+        "precision": 0.5178571428571429,
+        "recall": 0.58,
+        "f1": 0.5471698113207547,
+        "support": 100
+      },
+      "mni_Mtei": {
+        "precision": 0.5,
+        "recall": 0.05,
+        "f1": 0.09090909090909091,
+        "support": 100
+      },
+      "npi_Deva": {
+        "precision": 0.7777777777777778,
+        "recall": 0.7,
+        "f1": 0.7368421052631577,
+        "support": 100
+      },
+      "ory_Orya": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "pan_Guru": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "san_Deva": {
+        "precision": 0.6576576576576577,
+        "recall": 0.73,
+        "f1": 0.6919431279620853,
+        "support": 100
+      },
+      "santhali": {
+        "precision": 0.5164835164835165,
+        "recall": 0.94,
+        "f1": 0.6666666666666667,
+        "support": 100
+      },
+      "snd_Deva": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "tam_Taml": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "tel_Telu": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "urd_Arab": {
+        "precision": 0.99,
+        "recall": 0.99,
+        "f1": 0.99,
+        "support": 100
+      }
+    },
+    "train_seconds": 6.604151725769043
+  },
+  "mlp_2hidden_avgvec": {
+    "description": "Averaged FastText wiki vectors -> MLP (2 hidden layer(s))",
+    "val_macro_f1": 0.825262125967285,
+    "test_macro_f1": 0.8253875321688677,
+    "test_accuracy": 0.8343478260869566,
+    "per_class_test": {
+      "asm_Beng": {
+        "precision": 0.9803921568627451,
+        "recall": 1.0,
+        "f1": 0.99009900990099,
+        "support": 100
+      },
+      "ben_Beng": {
+        "precision": 0.98,
+        "recall": 0.98,
+        "f1": 0.98,
+        "support": 100
+      },
+      "brx_Deva": {
+        "precision": 0.9146341463414634,
+        "recall": 0.75,
+        "f1": 0.8241758241758242,
+        "support": 100
+      },
+      "doi_Deva": {
+        "precision": 0.65,
+        "recall": 0.65,
+        "f1": 0.65,
+        "support": 100
+      },
+      "gom_Deva": {
+        "precision": 0.5060240963855421,
+        "recall": 0.42,
+        "f1": 0.4590163934426229,
+        "support": 100
+      },
+      "guj_Gujr": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "hin_Deva": {
+        "precision": 0.6403508771929824,
+        "recall": 0.73,
+        "f1": 0.6822429906542056,
+        "support": 100
+      },
+      "kan_Knda": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "kas_Arab": {
+        "precision": 0.9801980198019802,
+        "recall": 0.99,
+        "f1": 0.9850746268656716,
+        "support": 100
+      },
+      "khasi": {
+        "precision": 0.9423076923076923,
+        "recall": 0.98,
+        "f1": 0.9607843137254902,
+        "support": 100
+      },
+      "mai_Deva": {
+        "precision": 0.5454545454545454,
+        "recall": 0.66,
+        "f1": 0.597285067873303,
+        "support": 100
+      },
+      "mal_Mlym": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "mar_Deva": {
+        "precision": 0.5431034482758621,
+        "recall": 0.63,
+        "f1": 0.5833333333333334,
+        "support": 100
+      },
+      "mni_Mtei": {
+        "precision": 0.6,
+        "recall": 0.09,
+        "f1": 0.1565217391304348,
+        "support": 100
+      },
+      "npi_Deva": {
+        "precision": 0.8375,
+        "recall": 0.67,
+        "f1": 0.7444444444444446,
+        "support": 100
+      },
+      "ory_Orya": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "pan_Guru": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "san_Deva": {
+        "precision": 0.7184466019417476,
+        "recall": 0.74,
+        "f1": 0.729064039408867,
+        "support": 100
+      },
+      "santhali": {
+        "precision": 0.5138121546961326,
+        "recall": 0.93,
+        "f1": 0.6619217081850535,
+        "support": 100
+      },
+      "snd_Deva": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "tam_Taml": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "tel_Telu": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "urd_Arab": {
+        "precision": 0.99,
+        "recall": 0.99,
+        "f1": 0.99,
+        "support": 100
+      }
+    },
+    "train_seconds": 11.12882375717163
+  },
+  "lstm_frozen_fasttext": {
+    "description": "Frozen FastText wiki embeddings -> LSTM -> linear",
+    "val_macro_f1": 0.8701853874110835,
+    "test_macro_f1": 0.8685826156853892,
+    "test_accuracy": 0.8691304347826087,
+    "per_class_test": {
+      "asm_Beng": {
+        "precision": 0.9900990099009901,
+        "recall": 1.0,
+        "f1": 0.9950248756218906,
+        "support": 100
+      },
+      "ben_Beng": {
+        "precision": 0.9801980198019802,
+        "recall": 0.99,
+        "f1": 0.9850746268656716,
+        "support": 100
+      },
+      "brx_Deva": {
+        "precision": 0.9156626506024096,
+        "recall": 0.76,
+        "f1": 0.8306010928961748,
+        "support": 100
+      },
+      "doi_Deva": {
+        "precision": 0.7314814814814815,
+        "recall": 0.79,
+        "f1": 0.7596153846153846,
+        "support": 100
+      },
+      "gom_Deva": {
+        "precision": 0.5227272727272727,
+        "recall": 0.46,
+        "f1": 0.4893617021276596,
+        "support": 100
+      },
+      "guj_Gujr": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "hin_Deva": {
+        "precision": 0.7614678899082569,
+        "recall": 0.83,
+        "f1": 0.7942583732057417,
+        "support": 100
+      },
+      "kan_Knda": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "kas_Arab": {
+        "precision": 0.9801980198019802,
+        "recall": 0.99,
+        "f1": 0.9850746268656716,
+        "support": 100
+      },
+      "khasi": {
+        "precision": 0.9607843137254902,
+        "recall": 0.98,
+        "f1": 0.9702970297029702,
+        "support": 100
+      },
+      "mai_Deva": {
+        "precision": 0.7209302325581395,
+        "recall": 0.62,
+        "f1": 0.6666666666666666,
+        "support": 100
+      },
+      "mal_Mlym": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "mar_Deva": {
+        "precision": 0.5596330275229358,
+        "recall": 0.61,
+        "f1": 0.583732057416268,
+        "support": 100
+      },
+      "mni_Mtei": {
+        "precision": 0.6989247311827957,
+        "recall": 0.65,
+        "f1": 0.6735751295336787,
+        "support": 100
+      },
+      "npi_Deva": {
+        "precision": 0.6854838709677419,
+        "recall": 0.85,
+        "f1": 0.7589285714285714,
+        "support": 100
+      },
+      "ory_Orya": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "pan_Guru": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "san_Deva": {
+        "precision": 0.8241758241758241,
+        "recall": 0.75,
+        "f1": 0.7853403141361257,
+        "support": 100
+      },
+      "santhali": {
+        "precision": 0.6915887850467289,
+        "recall": 0.74,
+        "f1": 0.7149758454106279,
+        "support": 100
+      },
+      "snd_Deva": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "tam_Taml": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "tel_Telu": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "urd_Arab": {
+        "precision": 1.0,
+        "recall": 0.98,
+        "f1": 0.98989898989899,
+        "support": 100
+      }
+    },
+    "train_seconds": 16.28483533859253
+  },
+  "gru_frozen_fasttext": {
+    "description": "Frozen FastText wiki embeddings -> GRU -> linear",
+    "val_macro_f1": 0.8701504039040491,
+    "test_macro_f1": 0.8676525960932266,
+    "test_accuracy": 0.8673913043478261,
+    "per_class_test": {
+      "asm_Beng": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "ben_Beng": {
+        "precision": 0.970873786407767,
+        "recall": 1.0,
+        "f1": 0.9852216748768473,
+        "support": 100
+      },
+      "brx_Deva": {
+        "precision": 0.8191489361702128,
+        "recall": 0.77,
+        "f1": 0.7938144329896908,
+        "support": 100
+      },
+      "doi_Deva": {
+        "precision": 0.8260869565217391,
+        "recall": 0.76,
+        "f1": 0.7916666666666667,
+        "support": 100
+      },
+      "gom_Deva": {
+        "precision": 0.5035460992907801,
+        "recall": 0.71,
+        "f1": 0.5892116182572614,
+        "support": 100
+      },
+      "guj_Gujr": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "hin_Deva": {
+        "precision": 0.6439393939393939,
+        "recall": 0.85,
+        "f1": 0.7327586206896552,
+        "support": 100
+      },
+      "kan_Knda": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "kas_Arab": {
+        "precision": 0.9803921568627451,
+        "recall": 1.0,
+        "f1": 0.99009900990099,
+        "support": 100
+      },
+      "khasi": {
+        "precision": 0.96875,
+        "recall": 0.93,
+        "f1": 0.9489795918367346,
+        "support": 100
+      },
+      "mai_Deva": {
+        "precision": 0.6947368421052632,
+        "recall": 0.66,
+        "f1": 0.676923076923077,
+        "support": 100
+      },
+      "mal_Mlym": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "mar_Deva": {
+        "precision": 0.7142857142857143,
+        "recall": 0.45,
+        "f1": 0.5521472392638037,
+        "support": 100
+      },
+      "mni_Mtei": {
+        "precision": 0.6065573770491803,
+        "recall": 0.74,
+        "f1": 0.6666666666666666,
+        "support": 100
+      },
+      "npi_Deva": {
+        "precision": 0.891566265060241,
+        "recall": 0.74,
+        "f1": 0.8087431693989071,
+        "support": 100
+      },
+      "ory_Orya": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "pan_Guru": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "san_Deva": {
+        "precision": 0.8080808080808081,
+        "recall": 0.8,
+        "f1": 0.8040201005025126,
+        "support": 100
+      },
+      "santhali": {
+        "precision": 0.7160493827160493,
+        "recall": 0.58,
+        "f1": 0.6408839779005524,
+        "support": 100
+      },
+      "snd_Deva": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "tam_Taml": {
+        "precision": 0.99,
+        "recall": 0.99,
+        "f1": 0.99,
+        "support": 100
+      },
+      "tel_Telu": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "urd_Arab": {
+        "precision": 1.0,
+        "recall": 0.98,
+        "f1": 0.98989898989899,
+        "support": 100
+      }
+    },
+    "train_seconds": 10.70787262916565
+  },
+  "fasttext_supervised": {
+    "description": "fastText supervised classifier (subword n-gram embeddings learned from scratch)",
+    "val_macro_f1": 0.9113011334315853,
+    "test_macro_f1": 0.9101003627163714,
+    "test_accuracy": 0.9117391304347826,
+    "per_class_test": {
+      "asm_Beng": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "ben_Beng": {
+        "precision": 0.9803921568627451,
+        "recall": 1.0,
+        "f1": 0.99009900990099,
+        "support": 100
+      },
+      "brx_Deva": {
+        "precision": 0.9367088607594937,
+        "recall": 0.74,
+        "f1": 0.8268156424581006,
+        "support": 100
+      },
+      "doi_Deva": {
+        "precision": 0.9146341463414634,
+        "recall": 0.75,
+        "f1": 0.8241758241758242,
+        "support": 100
+      },
+      "gom_Deva": {
+        "precision": 0.6842105263157895,
+        "recall": 0.39,
+        "f1": 0.4968152866242039,
+        "support": 100
+      },
+      "guj_Gujr": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "hin_Deva": {
+        "precision": 0.6506849315068494,
+        "recall": 0.95,
+        "f1": 0.7723577235772358,
+        "support": 100
+      },
+      "kan_Knda": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "kas_Arab": {
+        "precision": 0.9900990099009901,
+        "recall": 1.0,
+        "f1": 0.9950248756218906,
+        "support": 100
+      },
+      "khasi": {
+        "precision": 0.9339622641509434,
+        "recall": 0.99,
+        "f1": 0.9611650485436893,
+        "support": 100
+      },
+      "mai_Deva": {
+        "precision": 0.7653061224489796,
+        "recall": 0.75,
+        "f1": 0.7575757575757575,
+        "support": 100
+      },
+      "mal_Mlym": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "mar_Deva": {
+        "precision": 0.6076923076923076,
+        "recall": 0.79,
+        "f1": 0.6869565217391304,
+        "support": 100
+      },
+      "mni_Mtei": {
+        "precision": 1.0,
+        "recall": 0.93,
+        "f1": 0.9637305699481865,
+        "support": 100
+      },
+      "npi_Deva": {
+        "precision": 0.946236559139785,
+        "recall": 0.88,
+        "f1": 0.911917098445596,
+        "support": 100
+      },
+      "ory_Orya": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "pan_Guru": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "san_Deva": {
+        "precision": 0.8,
+        "recall": 0.88,
+        "f1": 0.8380952380952381,
+        "support": 100
+      },
+      "santhali": {
+        "precision": 0.9,
+        "recall": 0.99,
+        "f1": 0.9428571428571428,
+        "support": 100
+      },
+      "snd_Deva": {
+        "precision": 1.0,
+        "recall": 0.98,
+        "f1": 0.98989898989899,
+        "support": 100
+      },
+      "tam_Taml": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593,
+        "support": 100
+      },
+      "tel_Telu": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 100
+      },
+      "urd_Arab": {
+        "precision": 1.0,
+        "recall": 0.98,
+        "f1": 0.98989898989899,
+        "support": 100
+      }
+    },
+    "train_seconds": 1.719738483428955
+  }
+}
