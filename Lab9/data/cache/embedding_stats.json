@@ -1,0 +1,26 @@
+{
+  "ft": {
+    "src": {
+      "type_coverage_pct": 57.73,
+      "token_in_vocab_pct": 94.83,
+      "token_with_pretrained_pct": 85.28
+    },
+    "tgt": {
+      "type_coverage_pct": 73.05,
+      "token_in_vocab_pct": 81.16,
+      "token_with_pretrained_pct": 72.52
+    }
+  },
+  "bpe": {
+    "src": {
+      "type_coverage_pct": 95.69,
+      "token_in_vocab_pct": 100.0,
+      "token_with_pretrained_pct": 98.68
+    },
+    "tgt": {
+      "type_coverage_pct": 91.69,
+      "token_in_vocab_pct": 100.0,
+      "token_with_pretrained_pct": 98.53
+    }
+  }
+}

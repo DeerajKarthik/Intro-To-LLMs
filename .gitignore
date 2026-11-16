@@ -1,2 +1,10 @@
 *.npz
 *.npy
+Lab8/.onmt_venv/
+Lab8/data/run/*.pt
+Lab9/data/cache/pretrained/*.pt
+Lab9/data/ft/*.pt
+Lab9/data/smoke_runs/bpe_pretrained/*.pt
+Lab9/data/smoke_runs/bpe_random/*.pt
+Lab9/data/smoke_runs/ft_pretrained/*.pt
+

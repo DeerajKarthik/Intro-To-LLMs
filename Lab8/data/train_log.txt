@@ -1,0 +1,668 @@
+[2026-10-15 06:03:32,902 WARNING] Corpus corpus_1's weight should be given. We default it to 1 for you.
+[2026-10-15 06:03:32,902 INFO] Parsed 2 corpora from -data.
+[2026-10-15 06:03:32,902 INFO] Get special vocabs from Transforms: {'src': [], 'tgt': []}.
+[2026-10-15 06:03:32,917 INFO] The first 10 tokens of the vocabs are:['<unk>', '<blank>', '<s>', '</s>', '▁the', '▁of', '▁and', '▁.', '▁in', ',']
+[2026-10-15 06:03:32,917 INFO] The decoder start token is: <s>
+[2026-10-15 06:03:32,917 INFO] Building model...
+[2026-10-15 06:03:33,023 INFO] Switching model to float32 for amp/apex_amp
+[2026-10-15 06:03:33,023 INFO] Non quantized layer compute is fp32
+[2026-10-15 06:03:33,497 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(7960, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding()
+      )
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (transformer): ModuleList(
+      (0-3): 4 x TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=False)
+          (linear_values): Linear(in_features=256, out_features=256, bias=False)
+          (linear_query): Linear(in_features=256, out_features=256, bias=False)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=False)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=1024, bias=False)
+          (w_2): Linear(in_features=1024, out_features=256, bias=False)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(7992, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding()
+      )
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+    (transformer_layers): ModuleList(
+      (0-3): 4 x TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=False)
+          (linear_values): Linear(in_features=256, out_features=256, bias=False)
+          (linear_query): Linear(in_features=256, out_features=256, bias=False)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=False)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=1024, bias=False)
+          (w_2): Linear(in_features=1024, out_features=256, bias=False)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=False)
+          (linear_values): Linear(in_features=256, out_features=256, bias=False)
+          (linear_query): Linear(in_features=256, out_features=256, bias=False)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=False)
+        )
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+      )
+    )
+  )
+  (generator): Linear(in_features=256, out_features=7992, bias=True)
+)
+[2026-10-15 06:03:33,498 INFO] encoder: 5188096
+[2026-10-15 06:03:33,498 INFO] decoder: 8300856
+[2026-10-15 06:03:33,498 INFO] * number of parameters: 13488952
+[2026-10-15 06:03:33,498 INFO] Trainable parameters = {'torch.float32': 13488952, 'torch.float16': 0, 'torch.uint8': 0, 'torch.int8': 0}
+[2026-10-15 06:03:33,498 INFO] Non trainable parameters = {'torch.float32': 0, 'torch.float16': 0, 'torch.uint8': 0, 'torch.int8': 0}
+[2026-10-15 06:03:33,498 INFO]  * src vocab size = 7960
+[2026-10-15 06:03:33,498 INFO]  * tgt vocab size = 7992
+[2026-10-15 06:03:33,509 INFO] Starting training on GPU: [0]
+[2026-10-15 06:03:33,509 INFO] Start training loop and validate every 1000 steps...
+[2026-10-15 06:03:33,510 INFO] Scoring with: TransformPipe(SentencePieceTransform(share_vocab=False, src_subword_model=data/en_sp.model, tgt_subword_model=data/ta_sp.model, src_subword_alpha=0, tgt_subword_alpha=0, src_subword_vocab=, tgt_subword_vocab=, src_vocab_threshold=0, tgt_vocab_threshold=0, src_subword_nbest=1, tgt_subword_nbest=1), FilterTooLongTransform(src_seq_length=150, tgt_seq_length=150))
+[2026-10-15 06:03:34,745 INFO] Weighted corpora loaded so far:
+			* corpus_1: 1
+[2026-10-15 06:03:35,934 INFO] Weighted corpora loaded so far:
+			* corpus_1: 1
+[2026-10-15 06:03:37,021 INFO] Weighted corpora loaded so far:
+			* corpus_1: 2
+[2026-10-15 06:03:37,027 INFO] Weighted corpora loaded so far:
+			* corpus_1: 2
+[2026-10-15 06:03:38,283 INFO] Weighted corpora loaded so far:
+			* corpus_1: 3
+[2026-10-15 06:03:38,293 INFO] Weighted corpora loaded so far:
+			* corpus_1: 3
+[2026-10-15 06:03:39,822 INFO] Weighted corpora loaded so far:
+			* corpus_1: 4
+[2026-10-15 06:03:39,830 INFO] Weighted corpora loaded so far:
+			* corpus_1: 4
+[2026-10-15 06:03:41,137 INFO] Weighted corpora loaded so far:
+			* corpus_1: 5
+[2026-10-15 06:03:41,163 INFO] Weighted corpora loaded so far:
+			* corpus_1: 5
+[2026-10-15 06:04:51,579 INFO] Step 200/10000; acc: 3.8; ppl: 4923.5; xent: 8.5; lr: 0.00010; sents:   57432; bsz: 3381/3412/144; 17322/17482 tok/s;     78 sec;
+[2026-10-15 06:05:43,162 INFO] Step 400/10000; acc: 9.8; ppl: 2249.8; xent: 7.7; lr: 0.00020; sents:   59875; bsz: 3489/3466/150; 27058/26882 tok/s;    130 sec;
+[2026-10-15 06:05:54,791 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8340478 -> 12594421 tokens
+			* FilterTooLongStats(filtered=17)
+
+[2026-10-15 06:05:54,799 INFO] Weighted corpora loaded so far:
+			* corpus_1: 6
+[2026-10-15 06:05:55,722 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8347515 -> 12601171 tokens
+			* FilterTooLongStats(filtered=45)
+
+[2026-10-15 06:05:55,726 INFO] Weighted corpora loaded so far:
+			* corpus_1: 6
+[2026-10-15 06:05:59,069 INFO] Weighted corpora loaded so far:
+			* corpus_1: 7
+[2026-10-15 06:05:59,541 INFO] Weighted corpora loaded so far:
+			* corpus_1: 7
+[2026-10-15 06:06:13,001 INFO] Weighted corpora loaded so far:
+			* corpus_1: 8
+[2026-10-15 06:06:13,136 INFO] Weighted corpora loaded so far:
+			* corpus_1: 8
+[2026-10-15 06:06:15,320 INFO] Weighted corpora loaded so far:
+			* corpus_1: 9
+[2026-10-15 06:06:15,547 INFO] Weighted corpora loaded so far:
+			* corpus_1: 9
+[2026-10-15 06:06:37,502 INFO] Step 600/10000; acc: 12.5; ppl: 1194.0; xent: 7.1; lr: 0.00030; sents:   61440; bsz: 3416/3470/154; 25147/25546 tok/s;    184 sec;
+[2026-10-15 06:18:40,499 INFO] Step 800/10000; acc: 13.5; ppl: 841.6; xent: 6.7; lr: 0.00040; sents:   56479; bsz: 3370/3461/141; 1865/1915 tok/s;    907 sec;
+[2026-10-15 06:19:33,473 INFO] Step 1000/10000; acc: 16.3; ppl: 550.2; xent: 6.3; lr: 0.00049; sents:   59532; bsz: 3425/3445/149; 25877/26029 tok/s;    960 sec;
+[2026-10-15 06:19:55,755 INFO] valid stats calculation
+                           took: 22.276342153549194 s.
+[2026-10-15 06:19:55,763 INFO] Train perplexity: 1433.11
+[2026-10-15 06:19:55,763 INFO] Train accuracy: 11.2182
+[2026-10-15 06:19:55,763 INFO] Sentences processed: 294758
+[2026-10-15 06:19:55,763 INFO] Average bsz: 3416/3451/147
+[2026-10-15 06:19:55,763 INFO] Validation perplexity: 507.016
+[2026-10-15 06:19:55,764 INFO] Validation accuracy: 15.8575
+[2026-10-15 06:19:55,775 INFO] Saving checkpoint data/run/model_step_1000.pt
+[2026-10-15 06:20:20,061 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8482897 -> 12988330 tokens
+			* FilterTooLongStats(filtered=54)
+
+[2026-10-15 06:20:20,076 INFO] Weighted corpora loaded so far:
+			* corpus_1: 10
+[2026-10-15 06:20:23,091 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8470723 -> 12972076 tokens
+			* FilterTooLongStats(filtered=19)
+
+[2026-10-15 06:20:23,109 INFO] Weighted corpora loaded so far:
+			* corpus_1: 10
+[2026-10-15 06:20:29,272 INFO] Weighted corpora loaded so far:
+			* corpus_1: 11
+[2026-10-15 06:20:33,535 INFO] Weighted corpora loaded so far:
+			* corpus_1: 11
+[2026-10-15 06:20:50,877 INFO] Step 1200/10000; acc: 19.0; ppl: 379.3; xent: 5.9; lr: 0.00059; sents:   59425; bsz: 3437/3422/149; 17764/17686 tok/s;   1037 sec;
+[2026-10-15 06:21:28,323 INFO] Weighted corpora loaded so far:
+			* corpus_1: 12
+[2026-10-15 06:21:31,928 INFO] Weighted corpora loaded so far:
+			* corpus_1: 13
+[2026-10-15 06:21:54,179 INFO] Weighted corpora loaded so far:
+			* corpus_1: 12
+[2026-10-15 06:21:58,590 INFO] Weighted corpora loaded so far:
+			* corpus_1: 13
+[2026-10-15 06:22:30,534 INFO] Weighted corpora loaded so far:
+			* corpus_1: 14
+[2026-10-15 06:23:17,087 INFO] Weighted corpora loaded so far:
+			* corpus_1: 14
+[2026-10-15 06:40:41,768 INFO] Step 1400/10000; acc: 21.8; ppl: 264.8; xent: 5.6; lr: 0.00069; sents:   60032; bsz: 3387/3450/150; 1138/1159 tok/s;   2228 sec;
+[2026-10-15 06:41:32,751 INFO] Step 1600/10000; acc: 23.3; ppl: 219.2; xent: 5.4; lr: 0.00079; sents:   56955; bsz: 3412/3479/142; 26770/27301 tok/s;   2279 sec;
+[2026-10-15 06:42:09,968 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8354924 -> 12690498 tokens
+			* FilterTooLongStats(filtered=17)
+
+[2026-10-15 06:42:09,981 INFO] Weighted corpora loaded so far:
+			* corpus_1: 15
+[2026-10-15 06:42:12,335 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8363782 -> 12700223 tokens
+			* FilterTooLongStats(filtered=45)
+
+[2026-10-15 06:42:12,351 INFO] Weighted corpora loaded so far:
+			* corpus_1: 15
+[2026-10-15 06:42:17,396 INFO] Weighted corpora loaded so far:
+			* corpus_1: 16
+[2026-10-15 06:42:21,361 INFO] Weighted corpora loaded so far:
+			* corpus_1: 16
+[2026-10-15 06:42:27,845 INFO] Step 1800/10000; acc: 25.6; ppl: 177.2; xent: 5.2; lr: 0.00089; sents:   59742; bsz: 3543/3470/149; 25727/25196 tok/s;   2334 sec;
+[2026-10-15 06:43:45,952 INFO] Weighted corpora loaded so far:
+			* corpus_1: 17
+[2026-10-15 06:43:50,039 INFO] Weighted corpora loaded so far:
+			* corpus_1: 18
+[2026-10-15 06:44:12,448 INFO] Weighted corpora loaded so far:
+			* corpus_1: 17
+[2026-10-15 06:44:17,285 INFO] Weighted corpora loaded so far:
+			* corpus_1: 18
+[2026-10-15 06:52:18,412 INFO] Step 2000/10000; acc: 28.0; ppl: 141.5; xent: 5.0; lr: 0.00099; sents:   59673; bsz: 3397/3454/149; 2301/2340 tok/s;   2925 sec;
+[2026-10-15 06:52:25,005 INFO] valid stats calculation
+                           took: 6.5864951610565186 s.
+[2026-10-15 06:52:25,006 INFO] Train perplexity: 564.655
+[2026-10-15 06:52:25,006 INFO] Train accuracy: 17.3833
+[2026-10-15 06:52:25,006 INFO] Sentences processed: 590585
+[2026-10-15 06:52:25,006 INFO] Average bsz: 3426/3453/148
+[2026-10-15 06:52:25,006 INFO] Validation perplexity: 184.809
+[2026-10-15 06:52:25,006 INFO] Validation accuracy: 25.0836
+[2026-10-15 06:52:25,009 INFO] Saving checkpoint data/run/model_step_2000.pt
+[2026-10-15 06:53:14,204 INFO] Step 2200/10000; acc: 29.5; ppl: 123.9; xent: 4.8; lr: 0.00109; sents:   58181; bsz: 3463/3493/145; 24830/25047 tok/s;   2981 sec;
+[2026-10-15 06:53:44,672 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8453820 -> 12895960 tokens
+			* FilterTooLongStats(filtered=19)
+
+[2026-10-15 06:53:44,673 INFO] Weighted corpora loaded so far:
+			* corpus_1: 19
+[2026-10-15 06:53:45,538 INFO] Weighted corpora loaded so far:
+			* corpus_1: 20
+[2026-10-15 06:53:46,078 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8463819 -> 12908200 tokens
+			* FilterTooLongStats(filtered=54)
+
+[2026-10-15 06:53:46,079 INFO] Weighted corpora loaded so far:
+			* corpus_1: 19
+[2026-10-15 06:53:47,083 INFO] Weighted corpora loaded so far:
+			* corpus_1: 20
+[2026-10-15 06:53:48,877 INFO] Weighted corpora loaded so far:
+			* corpus_1: 21
+[2026-10-15 06:53:49,768 INFO] Weighted corpora loaded so far:
+			* corpus_1: 22
+[2026-10-15 06:53:50,569 INFO] Weighted corpora loaded so far:
+			* corpus_1: 21
+[2026-10-15 06:53:51,572 INFO] Weighted corpora loaded so far:
+			* corpus_1: 22
+[2026-10-15 06:53:53,662 INFO] Weighted corpora loaded so far:
+			* corpus_1: 23
+[2026-10-15 06:53:55,441 INFO] Weighted corpora loaded so far:
+			* corpus_1: 23
+[2026-10-15 06:54:07,130 INFO] Step 2400/10000; acc: 30.7; ppl: 114.0; xent: 4.7; lr: 0.00119; sents:   58418; bsz: 3445/3434/146; 26034/25956 tok/s;   3034 sec;
+[2026-10-15 06:55:00,735 INFO] Step 2600/10000; acc: 33.3; ppl:  93.4; xent: 4.5; lr: 0.00129; sents:   60904; bsz: 3353/3374/152; 25022/25180 tok/s;   3087 sec;
+[2026-10-15 06:55:55,124 INFO] Step 2800/10000; acc: 34.9; ppl:  82.3; xent: 4.4; lr: 0.00138; sents:   59498; bsz: 3483/3530/149; 25619/25962 tok/s;   3142 sec;
+[2026-10-15 06:56:35,358 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8375015 -> 12772992 tokens
+			* FilterTooLongStats(filtered=17)
+
+[2026-10-15 06:56:35,358 INFO] Weighted corpora loaded so far:
+			* corpus_1: 24
+[2026-10-15 06:56:36,808 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8384035 -> 12783046 tokens
+			* FilterTooLongStats(filtered=45)
+
+[2026-10-15 06:56:36,809 INFO] Weighted corpora loaded so far:
+			* corpus_1: 24
+[2026-10-15 06:56:38,679 INFO] Weighted corpora loaded so far:
+			* corpus_1: 25
+[2026-10-15 06:56:39,600 INFO] Weighted corpora loaded so far:
+			* corpus_1: 26
+[2026-10-15 06:56:40,165 INFO] Weighted corpora loaded so far:
+			* corpus_1: 25
+[2026-10-15 06:56:41,134 INFO] Weighted corpora loaded so far:
+			* corpus_1: 26
+[2026-10-15 06:56:43,413 INFO] Weighted corpora loaded so far:
+			* corpus_1: 27
+[2026-10-15 06:56:45,018 INFO] Weighted corpora loaded so far:
+			* corpus_1: 27
+[2026-10-15 06:56:48,863 INFO] Step 3000/10000; acc: 35.4; ppl:  80.8; xent: 4.4; lr: 0.00148; sents:   59820; bsz: 3384/3421/150; 25188/25464 tok/s;   3195 sec;
+[2026-10-15 06:56:57,044 INFO] valid stats calculation
+                           took: 8.18045711517334 s.
+[2026-10-15 06:56:57,045 INFO] Train perplexity: 314.468
+[2026-10-15 06:56:57,045 INFO] Train accuracy: 22.5101
+[2026-10-15 06:56:57,045 INFO] Sentences processed: 887406
+[2026-10-15 06:56:57,045 INFO] Average bsz: 3426/3452/148
+[2026-10-15 06:56:57,045 INFO] Validation perplexity: 121.962
+[2026-10-15 06:56:57,045 INFO] Validation accuracy: 30.1234
+[2026-10-15 06:56:57,047 INFO] Saving checkpoint data/run/model_step_3000.pt
+[2026-10-15 06:57:51,073 INFO] Step 3200/10000; acc: 37.2; ppl:  71.4; xent: 4.3; lr: 0.00158; sents:   58768; bsz: 3379/3433/147; 21726/22076 tok/s;   3258 sec;
+[2026-10-15 06:58:45,177 INFO] Step 3400/10000; acc: 38.0; ppl:  66.8; xent: 4.2; lr: 0.00168; sents:   56562; bsz: 3454/3461/141; 25538/25584 tok/s;   3312 sec;
+[2026-10-15 06:59:33,836 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8392919 -> 12711731 tokens
+			* FilterTooLongStats(filtered=16)
+
+[2026-10-15 06:59:33,836 INFO] Weighted corpora loaded so far:
+			* corpus_1: 28
+[2026-10-15 06:59:34,844 INFO] Weighted corpora loaded so far:
+			* corpus_1: 29
+[2026-10-15 06:59:35,854 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8401893 -> 12721813 tokens
+			* FilterTooLongStats(filtered=47)
+
+[2026-10-15 06:59:35,855 INFO] Weighted corpora loaded so far:
+			* corpus_1: 28
+[2026-10-15 06:59:38,390 INFO] Weighted corpora loaded so far:
+			* corpus_1: 30
+[2026-10-15 06:59:39,125 INFO] Weighted corpora loaded so far:
+			* corpus_1: 29
+[2026-10-15 06:59:39,465 INFO] Weighted corpora loaded so far:
+			* corpus_1: 31
+[2026-10-15 06:59:39,771 INFO] Step 3600/10000; acc: 39.3; ppl:  62.0; xent: 4.1; lr: 0.00178; sents:   60953; bsz: 3423/3463/152; 25079/25376 tok/s;   3366 sec;
+[2026-10-15 06:59:43,160 INFO] Weighted corpora loaded so far:
+			* corpus_1: 30
+[2026-10-15 06:59:43,794 INFO] Weighted corpora loaded so far:
+			* corpus_1: 32
+[2026-10-15 06:59:44,183 INFO] Weighted corpora loaded so far:
+			* corpus_1: 31
+[2026-10-15 06:59:45,189 INFO] Weighted corpora loaded so far:
+			* corpus_1: 32
+[2026-10-15 07:00:35,611 INFO] Step 3800/10000; acc: 40.0; ppl:  59.7; xent: 4.1; lr: 0.00188; sents:   59965; bsz: 3389/3396/150; 24273/24330 tok/s;   3422 sec;
+[2026-10-15 07:01:30,613 INFO] Step 4000/10000; acc: 41.9; ppl:  52.3; xent: 4.0; lr: 0.00198; sents:   58153; bsz: 3408/3422/145; 24783/24886 tok/s;   3477 sec;
+[2026-10-15 07:01:37,393 INFO] valid stats calculation
+                           took: 6.780278205871582 s.
+[2026-10-15 07:01:37,394 INFO] Train perplexity: 209.975
+[2026-10-15 07:01:37,394 INFO] Train accuracy: 26.6874
+[2026-10-15 07:01:37,394 INFO] Sentences processed: 1.18181e+06
+[2026-10-15 07:01:37,394 INFO] Average bsz: 3422/3448/148
+[2026-10-15 07:01:37,394 INFO] Validation perplexity: 99.5916
+[2026-10-15 07:01:37,394 INFO] Validation accuracy: 33.2949
+[2026-10-15 07:01:37,396 INFO] Saving checkpoint data/run/model_step_4000.pt
+[2026-10-15 07:02:31,479 INFO] Step 4200/10000; acc: 42.0; ppl:  52.0; xent: 4.0; lr: 0.00193; sents:   61232; bsz: 3449/3481/153; 22667/22877 tok/s;   3538 sec;
+[2026-10-15 07:02:33,197 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8435546 -> 12947626 tokens
+			* FilterTooLongStats(filtered=20)
+
+[2026-10-15 07:02:33,197 INFO] Weighted corpora loaded so far:
+			* corpus_1: 33
+[2026-10-15 07:02:35,691 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8446178 -> 12961385 tokens
+			* FilterTooLongStats(filtered=52)
+
+[2026-10-15 07:02:35,691 INFO] Weighted corpora loaded so far:
+			* corpus_1: 33
+[2026-10-15 07:02:36,614 INFO] Weighted corpora loaded so far:
+			* corpus_1: 34
+[2026-10-15 07:02:37,637 INFO] Weighted corpora loaded so far:
+			* corpus_1: 35
+[2026-10-15 07:02:39,172 INFO] Weighted corpora loaded so far:
+			* corpus_1: 34
+[2026-10-15 07:02:40,241 INFO] Weighted corpora loaded so far:
+			* corpus_1: 35
+[2026-10-15 07:02:41,715 INFO] Weighted corpora loaded so far:
+			* corpus_1: 36
+[2026-10-15 07:02:44,278 INFO] Weighted corpora loaded so far:
+			* corpus_1: 36
+[2026-10-15 07:03:27,289 INFO] Step 4400/10000; acc: 41.7; ppl:  53.6; xent: 4.0; lr: 0.00188; sents:   57388; bsz: 3403/3455/143; 24392/24766 tok/s;   3594 sec;
+[2026-10-15 07:04:22,806 INFO] Step 4600/10000; acc: 45.7; ppl:  41.8; xent: 3.7; lr: 0.00184; sents:   59381; bsz: 3448/3442/148; 24845/24802 tok/s;   3649 sec;
+[2026-10-15 07:05:17,970 INFO] Step 4800/10000; acc: 43.4; ppl:  47.2; xent: 3.9; lr: 0.00180; sents:   56295; bsz: 3416/3443/141; 24773/24963 tok/s;   3704 sec;
+[2026-10-15 07:05:27,699 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8361711 -> 12616512 tokens
+			* FilterTooLongStats(filtered=16)
+
+[2026-10-15 07:05:27,699 INFO] Weighted corpora loaded so far:
+			* corpus_1: 37
+[2026-10-15 07:05:30,849 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8369706 -> 12624844 tokens
+			* FilterTooLongStats(filtered=44)
+
+[2026-10-15 07:05:30,849 INFO] Weighted corpora loaded so far:
+			* corpus_1: 37
+[2026-10-15 07:05:30,857 INFO] Weighted corpora loaded so far:
+			* corpus_1: 38
+[2026-10-15 07:05:31,888 INFO] Weighted corpora loaded so far:
+			* corpus_1: 39
+[2026-10-15 07:05:34,319 INFO] Weighted corpora loaded so far:
+			* corpus_1: 38
+[2026-10-15 07:05:35,345 INFO] Weighted corpora loaded so far:
+			* corpus_1: 39
+[2026-10-15 07:05:35,851 INFO] Weighted corpora loaded so far:
+			* corpus_1: 40
+[2026-10-15 07:05:36,852 INFO] Weighted corpora loaded so far:
+			* corpus_1: 41
+[2026-10-15 07:05:39,279 INFO] Weighted corpora loaded so far:
+			* corpus_1: 40
+[2026-10-15 07:05:40,367 INFO] Weighted corpora loaded so far:
+			* corpus_1: 41
+[2026-10-15 07:06:13,962 INFO] Step 5000/10000; acc: 45.5; ppl:  42.5; xent: 3.8; lr: 0.00177; sents:   60860; bsz: 3436/3477/152; 24543/24843 tok/s;   3760 sec;
+[2026-10-15 07:06:22,217 INFO] valid stats calculation
+                           took: 8.254653692245483 s.
+[2026-10-15 07:06:22,218 INFO] Train perplexity: 155.653
+[2026-10-15 07:06:22,218 INFO] Train accuracy: 30.0939
+[2026-10-15 07:06:22,218 INFO] Sentences processed: 1.47696e+06
+[2026-10-15 07:06:22,218 INFO] Average bsz: 3424/3450/148
+[2026-10-15 07:06:22,218 INFO] Validation perplexity: 81.4796
+[2026-10-15 07:06:22,218 INFO] Validation accuracy: 36.2819
+[2026-10-15 07:06:22,223 INFO] Saving checkpoint data/run/model_step_5000.pt
+[2026-10-15 07:07:16,153 INFO] Step 5200/10000; acc: 47.1; ppl:  38.1; xent: 3.6; lr: 0.00173; sents:   58808; bsz: 3332/3423/147; 21432/22018 tok/s;   3823 sec;
+[2026-10-15 07:08:11,011 INFO] Step 5400/10000; acc: 46.0; ppl:  41.0; xent: 3.7; lr: 0.00170; sents:   57714; bsz: 3451/3436/144; 25160/25052 tok/s;   3878 sec;
+[2026-10-15 07:08:30,273 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8470459 -> 13039897 tokens
+			* FilterTooLongStats(filtered=20)
+
+[2026-10-15 07:08:30,273 INFO] Weighted corpora loaded so far:
+			* corpus_1: 42
+[2026-10-15 07:08:31,004 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8481393 -> 13054893 tokens
+			* FilterTooLongStats(filtered=55)
+
+[2026-10-15 07:08:31,005 INFO] Weighted corpora loaded so far:
+			* corpus_1: 42
+[2026-10-15 07:08:34,230 INFO] Weighted corpora loaded so far:
+			* corpus_1: 43
+[2026-10-15 07:08:34,822 INFO] Weighted corpora loaded so far:
+			* corpus_1: 43
+[2026-10-15 07:08:35,223 INFO] Weighted corpora loaded so far:
+			* corpus_1: 44
+[2026-10-15 07:08:35,879 INFO] Weighted corpora loaded so far:
+			* corpus_1: 44
+[2026-10-15 07:08:36,273 INFO] Weighted corpora loaded so far:
+			* corpus_1: 45
+[2026-10-15 07:08:36,939 INFO] Weighted corpora loaded so far:
+			* corpus_1: 45
+[2026-10-15 07:09:06,867 INFO] Step 5600/10000; acc: 48.3; ppl:  36.7; xent: 3.6; lr: 0.00167; sents:   60006; bsz: 3450/3471/150; 24709/24854 tok/s;   3933 sec;
+[2026-10-15 07:10:03,323 INFO] Step 5800/10000; acc: 50.7; ppl:  31.8; xent: 3.5; lr: 0.00164; sents:   60581; bsz: 3493/3500/151; 24747/24802 tok/s;   3990 sec;
+[2026-10-15 07:10:58,537 INFO] Step 6000/10000; acc: 49.3; ppl:  34.3; xent: 3.5; lr: 0.00161; sents:   59672; bsz: 3403/3405/149; 24654/24666 tok/s;   4045 sec;
+[2026-10-15 07:11:05,554 INFO] valid stats calculation
+                           took: 7.016595840454102 s.
+[2026-10-15 07:11:05,555 INFO] Train perplexity: 122.106
+[2026-10-15 07:11:05,555 INFO] Train accuracy: 33.1256
+[2026-10-15 07:11:05,555 INFO] Sentences processed: 1.77374e+06
+[2026-10-15 07:11:05,555 INFO] Average bsz: 3424/3450/148
+[2026-10-15 07:11:05,555 INFO] Validation perplexity: 73.5379
+[2026-10-15 07:11:05,555 INFO] Validation accuracy: 37.8215
+[2026-10-15 07:11:05,557 INFO] Saving checkpoint data/run/model_step_6000.pt
+[2026-10-15 07:11:30,343 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8343300 -> 12591502 tokens
+			* FilterTooLongStats(filtered=16)
+
+[2026-10-15 07:11:30,344 INFO] Weighted corpora loaded so far:
+			* corpus_1: 46
+[2026-10-15 07:11:31,329 INFO] Weighted corpora loaded so far:
+			* corpus_1: 47
+[2026-10-15 07:11:33,517 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8350948 -> 12598812 tokens
+			* FilterTooLongStats(filtered=44)
+
+[2026-10-15 07:11:33,517 INFO] Weighted corpora loaded so far:
+			* corpus_1: 46
+[2026-10-15 07:11:34,541 INFO] Weighted corpora loaded so far:
+			* corpus_1: 47
+[2026-10-15 07:11:34,850 INFO] Weighted corpora loaded so far:
+			* corpus_1: 48
+[2026-10-15 07:11:35,915 INFO] Weighted corpora loaded so far:
+			* corpus_1: 49
+[2026-10-15 07:11:38,246 INFO] Weighted corpora loaded so far:
+			* corpus_1: 48
+[2026-10-15 07:11:39,253 INFO] Weighted corpora loaded so far:
+			* corpus_1: 49
+[2026-10-15 07:12:00,038 INFO] Step 6200/10000; acc: 49.4; ppl:  34.2; xent: 3.5; lr: 0.00159; sents:   58512; bsz: 3409/3477/146; 22169/22614 tok/s;   4107 sec;
+[2026-10-15 07:12:55,829 INFO] Step 6400/10000; acc: 50.5; ppl:  32.2; xent: 3.5; lr: 0.00156; sents:   59128; bsz: 3403/3435/148; 24401/24630 tok/s;   4162 sec;
+[2026-10-15 07:13:51,532 INFO] Step 6600/10000; acc: 51.9; ppl:  29.9; xent: 3.4; lr: 0.00154; sents:   57753; bsz: 3417/3457/144; 24540/24825 tok/s;   4218 sec;
+[2026-10-15 07:14:24,190 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8475763 -> 13000186 tokens
+			* FilterTooLongStats(filtered=19)
+
+[2026-10-15 07:14:24,190 INFO] Weighted corpora loaded so far:
+			* corpus_1: 50
+[2026-10-15 07:14:27,330 INFO] Weighted corpora loaded so far:
+			* corpus_1: 51
+[2026-10-15 07:14:27,643 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8489127 -> 13019464 tokens
+			* FilterTooLongStats(filtered=54)
+
+[2026-10-15 07:14:27,643 INFO] Weighted corpora loaded so far:
+			* corpus_1: 50
+[2026-10-15 07:14:28,422 INFO] Weighted corpora loaded so far:
+			* corpus_1: 52
+[2026-10-15 07:14:31,281 INFO] Weighted corpora loaded so far:
+			* corpus_1: 51
+[2026-10-15 07:14:32,213 INFO] Weighted corpora loaded so far:
+			* corpus_1: 52
+[2026-10-15 07:14:32,480 INFO] Weighted corpora loaded so far:
+			* corpus_1: 53
+[2026-10-15 07:14:33,582 INFO] Weighted corpora loaded so far:
+			* corpus_1: 54
+[2026-10-15 07:14:36,326 INFO] Weighted corpora loaded so far:
+			* corpus_1: 53
+[2026-10-15 07:14:37,334 INFO] Weighted corpora loaded so far:
+			* corpus_1: 54
+[2026-10-15 07:14:47,209 INFO] Step 6800/10000; acc: 51.3; ppl:  31.1; xent: 3.4; lr: 0.00152; sents:   59702; bsz: 3430/3461/149; 24638/24862 tok/s;   4274 sec;
+[2026-10-15 07:15:43,358 INFO] Step 7000/10000; acc: 52.7; ppl:  29.2; xent: 3.4; lr: 0.00149; sents:   59025; bsz: 3408/3429/148; 24278/24432 tok/s;   4330 sec;
+[2026-10-15 07:15:50,075 INFO] valid stats calculation
+                           took: 6.7161877155303955 s.
+[2026-10-15 07:15:50,075 INFO] Train perplexity: 100.497
+[2026-10-15 07:15:50,075 INFO] Train accuracy: 35.7001
+[2026-10-15 07:15:50,075 INFO] Sentences processed: 2.06786e+06
+[2026-10-15 07:15:50,075 INFO] Average bsz: 3422/3450/148
+[2026-10-15 07:15:50,075 INFO] Validation perplexity: 72.757
+[2026-10-15 07:15:50,075 INFO] Validation accuracy: 38.7326
+[2026-10-15 07:15:50,077 INFO] Saving checkpoint data/run/model_step_7000.pt
+[2026-10-15 07:16:44,962 INFO] Step 7200/10000; acc: 53.5; ppl:  27.6; xent: 3.3; lr: 0.00147; sents:   58387; bsz: 3493/3493/146; 22682/22679 tok/s;   4391 sec;
+[2026-10-15 07:17:25,637 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8345389 -> 12655186 tokens
+			* FilterTooLongStats(filtered=17)
+
+[2026-10-15 07:17:25,637 INFO] Weighted corpora loaded so far:
+			* corpus_1: 55
+[2026-10-15 07:17:26,570 INFO] Weighted corpora loaded so far:
+			* corpus_1: 56
+[2026-10-15 07:17:29,189 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8352968 -> 12661931 tokens
+			* FilterTooLongStats(filtered=45)
+
+[2026-10-15 07:17:29,189 INFO] Weighted corpora loaded so far:
+			* corpus_1: 55
+[2026-10-15 07:17:30,126 INFO] Weighted corpora loaded so far:
+			* corpus_1: 57
+[2026-10-15 07:17:30,237 INFO] Weighted corpora loaded so far:
+			* corpus_1: 56
+[2026-10-15 07:17:31,164 INFO] Weighted corpora loaded so far:
+			* corpus_1: 58
+[2026-10-15 07:17:34,051 INFO] Weighted corpora loaded so far:
+			* corpus_1: 57
+[2026-10-15 07:17:35,114 INFO] Weighted corpora loaded so far:
+			* corpus_1: 58
+[2026-10-15 07:17:39,356 INFO] Step 7400/10000; acc: 50.7; ppl:  31.8; xent: 3.5; lr: 0.00145; sents:   56831; bsz: 3312/3358/142; 24358/24694 tok/s;   4446 sec;
+[2026-10-15 07:18:35,656 INFO] Step 7600/10000; acc: 54.7; ppl:  26.1; xent: 3.3; lr: 0.00143; sents:   63689; bsz: 3433/3468/159; 24389/24636 tok/s;   4502 sec;
+[2026-10-15 07:19:31,669 INFO] Step 7800/10000; acc: 54.8; ppl:  26.0; xent: 3.3; lr: 0.00142; sents:   59208; bsz: 3406/3439/148; 24323/24562 tok/s;   4558 sec;
+[2026-10-15 07:20:19,956 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8454815 -> 12909782 tokens
+			* FilterTooLongStats(filtered=19)
+
+[2026-10-15 07:20:19,956 INFO] Weighted corpora loaded so far:
+			* corpus_1: 59
+[2026-10-15 07:20:20,960 INFO] Weighted corpora loaded so far:
+			* corpus_1: 60
+[2026-10-15 07:20:23,965 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8464372 -> 12921564 tokens
+			* FilterTooLongStats(filtered=54)
+
+[2026-10-15 07:20:23,965 INFO] Weighted corpora loaded so far:
+			* corpus_1: 59
+[2026-10-15 07:20:24,300 INFO] Weighted corpora loaded so far:
+			* corpus_1: 61
+[2026-10-15 07:20:25,030 INFO] Weighted corpora loaded so far:
+			* corpus_1: 60
+[2026-10-15 07:20:25,359 INFO] Weighted corpora loaded so far:
+			* corpus_1: 62
+[2026-10-15 07:20:26,824 INFO] Step 8000/10000; acc: 52.4; ppl:  28.7; xent: 3.4; lr: 0.00140; sents:   58049; bsz: 3418/3441/145; 24789/24959 tok/s;   4613 sec;
+[2026-10-15 07:20:28,953 INFO] Weighted corpora loaded so far:
+			* corpus_1: 61
+[2026-10-15 07:20:29,862 INFO] Weighted corpora loaded so far:
+			* corpus_1: 63
+[2026-10-15 07:20:30,079 INFO] Weighted corpora loaded so far:
+			* corpus_1: 62
+[2026-10-15 07:20:31,184 INFO] Weighted corpora loaded so far:
+			* corpus_1: 63
+[2026-10-15 07:20:34,738 INFO] valid stats calculation
+                           took: 7.913640260696411 s.
+[2026-10-15 07:20:34,739 INFO] Train perplexity: 85.6744
+[2026-10-15 07:20:34,739 INFO] Train accuracy: 37.8867
+[2026-10-15 07:20:34,739 INFO] Sentences processed: 2.36403e+06
+[2026-10-15 07:20:34,739 INFO] Average bsz: 3421/3449/148
+[2026-10-15 07:20:34,739 INFO] Validation perplexity: 70.0784
+[2026-10-15 07:20:34,739 INFO] Validation accuracy: 39.8109
+[2026-10-15 07:20:34,741 INFO] Saving checkpoint data/run/model_step_8000.pt
+[2026-10-15 07:21:30,020 INFO] Step 8200/10000; acc: 55.1; ppl:  25.8; xent: 3.3; lr: 0.00138; sents:   59149; bsz: 3470/3491/148; 21963/22098 tok/s;   4677 sec;
+[2026-10-15 07:22:25,243 INFO] Step 8400/10000; acc: 57.0; ppl:  23.4; xent: 3.2; lr: 0.00136; sents:   59162; bsz: 3360/3412/148; 24336/24716 tok/s;   4732 sec;
+[2026-10-15 07:23:21,299 INFO] Step 8600/10000; acc: 54.1; ppl:  26.8; xent: 3.3; lr: 0.00135; sents:   56758; bsz: 3495/3495/142; 24937/24938 tok/s;   4788 sec;
+[2026-10-15 07:23:23,427 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8375162 -> 12758902 tokens
+			* FilterTooLongStats(filtered=17)
+
+[2026-10-15 07:23:23,427 INFO] Weighted corpora loaded so far:
+			* corpus_1: 64
+[2026-10-15 07:23:26,576 INFO] Weighted corpora loaded so far:
+			* corpus_1: 65
+[2026-10-15 07:23:27,450 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8385279 -> 12769961 tokens
+			* FilterTooLongStats(filtered=45)
+
+[2026-10-15 07:23:27,450 INFO] Weighted corpora loaded so far:
+			* corpus_1: 64
+[2026-10-15 07:23:27,667 INFO] Weighted corpora loaded so far:
+			* corpus_1: 66
+[2026-10-15 07:23:28,453 INFO] Weighted corpora loaded so far:
+			* corpus_1: 65
+[2026-10-15 07:23:31,822 INFO] Weighted corpora loaded so far:
+			* corpus_1: 67
+[2026-10-15 07:23:32,177 INFO] Weighted corpora loaded so far:
+			* corpus_1: 66
+[2026-10-15 07:23:33,210 INFO] Weighted corpora loaded so far:
+			* corpus_1: 67
+[2026-10-15 07:24:17,102 INFO] Step 8800/10000; acc: 55.0; ppl:  25.8; xent: 3.3; lr: 0.00133; sents:   60968; bsz: 3409/3437/152; 24435/24637 tok/s;   4844 sec;
+[2026-10-15 07:25:12,867 INFO] Step 9000/10000; acc: 56.1; ppl:  24.0; xent: 3.2; lr: 0.00132; sents:   57634; bsz: 3354/3399/144; 24061/24381 tok/s;   4899 sec;
+[2026-10-15 07:25:19,599 INFO] valid stats calculation
+                           took: 6.730962514877319 s.
+[2026-10-15 07:25:19,600 INFO] Train perplexity: 74.7734
+[2026-10-15 07:25:19,600 INFO] Train accuracy: 39.8351
+[2026-10-15 07:25:19,600 INFO] Sentences processed: 2.6577e+06
+[2026-10-15 07:25:19,600 INFO] Average bsz: 3421/3449/148
+[2026-10-15 07:25:19,600 INFO] Validation perplexity: 67.8052
+[2026-10-15 07:25:19,600 INFO] Validation accuracy: 40.2664
+[2026-10-15 07:25:19,601 INFO] Saving checkpoint data/run/model_step_9000.pt
+[2026-10-15 07:26:14,677 INFO] Step 9200/10000; acc: 57.0; ppl:  23.3; xent: 3.1; lr: 0.00130; sents:   59718; bsz: 3533/3514/149; 22862/22741 tok/s;   4961 sec;
+[2026-10-15 07:26:24,265 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8418102 -> 12783466 tokens
+			* FilterTooLongStats(filtered=18)
+
+[2026-10-15 07:26:24,265 INFO] Weighted corpora loaded so far:
+			* corpus_1: 68
+[2026-10-15 07:26:25,160 INFO] Weighted corpora loaded so far:
+			* corpus_1: 69
+[2026-10-15 07:26:28,458 INFO] Weighted corpora loaded so far:
+			* corpus_1: 70
+[2026-10-15 07:26:28,711 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8427936 -> 12795194 tokens
+			* FilterTooLongStats(filtered=49)
+
+[2026-10-15 07:26:28,712 INFO] Weighted corpora loaded so far:
+			* corpus_1: 68
+[2026-10-15 07:26:29,538 INFO] Weighted corpora loaded so far:
+			* corpus_1: 71
+[2026-10-15 07:26:29,803 INFO] Weighted corpora loaded so far:
+			* corpus_1: 69
+[2026-10-15 07:26:33,474 INFO] Weighted corpora loaded so far:
+			* corpus_1: 70
+[2026-10-15 07:26:33,816 INFO] Weighted corpora loaded so far:
+			* corpus_1: 72
+[2026-10-15 07:26:34,573 INFO] Weighted corpora loaded so far:
+			* corpus_1: 71
+[2026-10-15 07:26:38,637 INFO] Weighted corpora loaded so far:
+			* corpus_1: 72
+[2026-10-15 07:27:10,234 INFO] Step 9400/10000; acc: 56.2; ppl:  24.4; xent: 3.2; lr: 0.00129; sents:   60609; bsz: 3376/3414/152; 24307/24580 tok/s;   5017 sec;
+[2026-10-15 07:28:06,586 INFO] Step 9600/10000; acc: 56.4; ppl:  23.6; xent: 3.2; lr: 0.00128; sents:   57227; bsz: 3437/3494/143; 24399/24802 tok/s;   5073 sec;
+[2026-10-15 07:29:01,647 INFO] Step 9800/10000; acc: 57.3; ppl:  23.0; xent: 3.1; lr: 0.00126; sents:   58119; bsz: 3315/3393/145; 24080/24648 tok/s;   5128 sec;
+[2026-10-15 07:29:20,075 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8411927 -> 12884843 tokens
+			* FilterTooLongStats(filtered=18)
+
+[2026-10-15 07:29:20,076 INFO] Weighted corpora loaded so far:
+			* corpus_1: 73
+[2026-10-15 07:29:21,017 INFO] Weighted corpora loaded so far:
+			* corpus_1: 74
+[2026-10-15 07:29:24,403 INFO] Weighted corpora loaded so far:
+			* corpus_1: 75
+[2026-10-15 07:29:25,433 INFO] Weighted corpora loaded so far:
+			* corpus_1: 76
+[2026-10-15 07:29:27,409 INFO] * Transform statistics for corpus_1(50.00%):
+			* SubwordStats: 8420472 -> 12895456 tokens
+			* FilterTooLongStats(filtered=50)
+
+[2026-10-15 07:29:27,409 INFO] Weighted corpora loaded so far:
+			* corpus_1: 73
+[2026-10-15 07:29:28,423 INFO] Weighted corpora loaded so far:
+			* corpus_1: 74
+[2026-10-15 07:29:32,364 INFO] Weighted corpora loaded so far:
+			* corpus_1: 75
+[2026-10-15 07:29:33,466 INFO] Weighted corpora loaded so far:
+			* corpus_1: 76
+[2026-10-15 07:29:57,775 INFO] Step 10000/10000; acc: 56.9; ppl:  23.4; xent: 3.2; lr: 0.00125; sents:   59735; bsz: 3504/3468/149; 24974/24718 tok/s;   5184 sec;
+[2026-10-15 07:30:10,046 INFO] valid stats calculation
+                           took: 12.26989197731018 s.
+[2026-10-15 07:30:10,047 INFO] Train perplexity: 66.5906
+[2026-10-15 07:30:10,047 INFO] Train accuracy: 41.5325
+[2026-10-15 07:30:10,048 INFO] Sentences processed: 2.95311e+06
+[2026-10-15 07:30:10,048 INFO] Average bsz: 3422/3449/148
+[2026-10-15 07:30:10,048 INFO] Validation perplexity: 66.4512
+[2026-10-15 07:30:10,048 INFO] Validation accuracy: 40.1972
+[2026-10-15 07:30:10,052 INFO] Saving checkpoint data/run/model_step_10000.pt

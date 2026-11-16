@@ -1,0 +1,8 @@
+model,test macro-F1,test accuracy
+Logistic regression (avg. wiki vectors),0.8004,0.8148
+"MLP, 1 hidden layer",0.812,0.8239
+"MLP, 2 hidden layers",0.8254,0.8343
+LSTM (frozen wiki vectors),0.8686,0.8691
+GRU (frozen wiki vectors),0.8677,0.8674
+FastText supervised,0.9101,0.9117
+"BERT (MuRIL, fine-tuned) — this lab",0.941,0.9413

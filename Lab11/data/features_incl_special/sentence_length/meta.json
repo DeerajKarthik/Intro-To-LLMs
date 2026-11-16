@@ -1,0 +1,6 @@
+{
+  "n": 49980,
+  "max_length": 72,
+  "pooling": "mean over non-pad tokens incl. [CLS]/[SEP]",
+  "seconds": 114.6
+}

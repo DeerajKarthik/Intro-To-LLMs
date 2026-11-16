@@ -1,0 +1,62 @@
+{
+  "data": {
+    "corpus_1": {
+      "path_src": "data/train.en",
+      "path_tgt": "data/train.ta",
+      "weight": 1,
+      "transforms": [
+        "filtertoolong"
+      ]
+    },
+    "valid": {
+      "path_src": "data/val.en",
+      "path_tgt": "data/val.ta",
+      "transforms": [
+        "filtertoolong"
+      ]
+    }
+  },
+  "save_data": "data/cache/samples_ft",
+  "src_vocab": "data/cache/vocab/ft.src",
+  "tgt_vocab": "data/cache/vocab/ft.tgt",
+  "src_vocab_size": 32000,
+  "tgt_vocab_size": 32000,
+  "src_seq_length": 150,
+  "tgt_seq_length": 150,
+  "save_model": "data/cache/probe/ft",
+  "save_checkpoint_steps": 1,
+  "keep_checkpoint": 1,
+  "train_steps": 1,
+  "valid_steps": 1000000000,
+  "warmup_steps": 1,
+  "report_every": 1,
+  "seed": 42,
+  "encoder_type": "transformer",
+  "decoder_type": "transformer",
+  "enc_layers": 1,
+  "dec_layers": 1,
+  "heads": 4,
+  "hidden_size": 300,
+  "word_vec_size": 300,
+  "transformer_ff": 64,
+  "dropout": 0.1,
+  "attention_dropout": 0.1,
+  "position_encoding": true,
+  "batch_type": "tokens",
+  "batch_size": 512,
+  "valid_batch_size": 32,
+  "accum_count": 1,
+  "optim": "adam",
+  "adam_beta2": 0.998,
+  "decay_method": "noam",
+  "learning_rate": 2.0,
+  "max_grad_norm": 0,
+  "label_smoothing": 0.1,
+  "normalization": "tokens",
+  "param_init": 0.0,
+  "param_init_glorot": true,
+  "world_size": 1,
+  "gpu_ranks": [
+    0
+  ]
+}

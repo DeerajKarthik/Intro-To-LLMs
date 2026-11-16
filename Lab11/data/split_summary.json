@@ -1,0 +1,23 @@
+{
+  "sentence_length": {
+    "pool_after_dedup": 118904,
+    "total": 49980,
+    "train": 44982,
+    "test": 4998,
+    "per_class_total": 8330
+  },
+  "bigram_shift": {
+    "pool_after_dedup": 119631,
+    "total": 50000,
+    "train": 45000,
+    "test": 5000,
+    "per_class_total": 25000
+  },
+  "subj_number": {
+    "pool_after_dedup": 119236,
+    "total": 50000,
+    "train": 45000,
+    "test": 5000,
+    "per_class_total": 25000
+  }
+}

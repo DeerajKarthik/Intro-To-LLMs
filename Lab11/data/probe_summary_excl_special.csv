@@ -1,0 +1,4 @@
+task,chance (test) %,best layer,best test acc %,all fits converged
+sentence_length,16.67,1,95.84,True
+bigram_shift,50.0,8,91.46,True
+subj_number,50.0,9,89.14,True

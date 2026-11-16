@@ -1,0 +1,6 @@
+{
+  "n": 49980,
+  "max_length": 72,
+  "pooling": "mean over real word tokens (non-pad, excluding [CLS]/[SEP])",
+  "seconds": 120.0
+}

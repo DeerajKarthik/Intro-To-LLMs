@@ -1,0 +1,36 @@
+data:
+    corpus_1:
+        path_src: data/train.en
+        path_tgt: data/train.ta
+        transforms: [filtertoolong]
+    valid:
+        path_src: data/val.en
+        path_tgt: data/val.ta
+        transforms: [filtertoolong]
+save_data: data/ft/samples
+src_vocab: data/ft/vocab.src
+tgt_vocab: data/ft/vocab.tgt
+src_vocab_size: 32000
+tgt_vocab_size: 32000
+src_seq_length: 150
+tgt_seq_length: 150
+save_model: data/ft/probe
+save_checkpoint_steps: 1
+train_steps: 1
+valid_steps: 1000000
+warmup_steps: 1
+report_every: 1
+enc_layers: 1
+dec_layers: 1
+heads: 4
+hidden_size: 300
+word_vec_size: 300
+transformer_ff: 64
+batch_type: tokens
+batch_size: 512
+accum_count: 1
+optim: adam
+decay_method: noam
+learning_rate: 2.0
+world_size: 1
+gpu_ranks: [0]

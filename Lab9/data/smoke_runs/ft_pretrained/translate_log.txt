@@ -1,0 +1,2 @@
+[2026-11-09 21:21:18,540 INFO] Loading checkpoint from data/smoke_runs/ft_pretrained/model_step_40.pt
+[2026-11-09 21:21:19,025 INFO] Loading data into the model

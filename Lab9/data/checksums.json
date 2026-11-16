@@ -1,0 +1,11 @@
+{
+  "train.en": "c6cfd22b02837ec91d15861f37ad5530",
+  "train.ta": "61573eb89e0cf33642b0f4a0aa8d577b",
+  "val.en": "a309f2d4e7a0abae427ef112bf11f27c",
+  "val.ta": "cad62f8451f56e9658f62066cc290cc8",
+  "test.en": "374647f06997fa74318c3f2c65cc5f13",
+  "test.ta": "916f1849926e5a674be95c20ae265266",
+  "train_bins.csv": "1b037c4c971359f2b34f167c7dc366b9",
+  "val_bins.csv": "24fc0801aac9aad825118f5262ebe1a3",
+  "test_bins.csv": "9d09816904de73bd960f3279625bb15b"
+}

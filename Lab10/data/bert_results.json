@@ -1,0 +1,173 @@
+{
+  "model": "google/muril-base-cased",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.3878067149286686,
+      "val_macro_f1": 0.8616306835421937,
+      "val_accuracy": 0.8917391304347826,
+      "minutes": 3.2
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6916477501910666,
+      "val_macro_f1": 0.9276171024382206,
+      "val_accuracy": 0.9291304347826087,
+      "minutes": 3.3
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.2974378735086192,
+      "val_macro_f1": 0.9378347471321468,
+      "val_accuracy": 0.9382608695652174,
+      "minutes": 3.3
+    }
+  ],
+  "test_macro_f1": 0.9410156249810132,
+  "test_accuracy": 0.941304347826087,
+  "per_class_test": {
+    "asm_Beng": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    },
+    "ben_Beng": {
+      "precision": 0.9803921568627451,
+      "recall": 1.0,
+      "f1": 0.99009900990099,
+      "support": 100
+    },
+    "brx_Deva": {
+      "precision": 0.946236559139785,
+      "recall": 0.88,
+      "f1": 0.911917098445596,
+      "support": 100
+    },
+    "doi_Deva": {
+      "precision": 0.9489795918367347,
+      "recall": 0.93,
+      "f1": 0.9393939393939393,
+      "support": 100
+    },
+    "gom_Deva": {
+      "precision": 0.78125,
+      "recall": 0.75,
+      "f1": 0.7653061224489796,
+      "support": 100
+    },
+    "guj_Gujr": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    },
+    "hin_Deva": {
+      "precision": 0.8807339449541285,
+      "recall": 0.96,
+      "f1": 0.9186602870813397,
+      "support": 100
+    },
+    "kan_Knda": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    },
+    "kas_Arab": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    },
+    "khasi": {
+      "precision": 0.970873786407767,
+      "recall": 1.0,
+      "f1": 0.9852216748768473,
+      "support": 100
+    },
+    "mai_Deva": {
+      "precision": 0.9494949494949495,
+      "recall": 0.94,
+      "f1": 0.9447236180904524,
+      "support": 100
+    },
+    "mal_Mlym": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    },
+    "mar_Deva": {
+      "precision": 0.7745098039215687,
+      "recall": 0.79,
+      "f1": 0.7821782178217823,
+      "support": 100
+    },
+    "mni_Mtei": {
+      "precision": 0.6810344827586207,
+      "recall": 0.79,
+      "f1": 0.7314814814814816,
+      "support": 100
+    },
+    "npi_Deva": {
+      "precision": 0.9900990099009901,
+      "recall": 1.0,
+      "f1": 0.9950248756218906,
+      "support": 100
+    },
+    "ory_Orya": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    },
+    "pan_Guru": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    },
+    "san_Deva": {
+      "precision": 0.98989898989899,
+      "recall": 0.98,
+      "f1": 0.9849246231155778,
+      "support": 100
+    },
+    "santhali": {
+      "precision": 0.7710843373493976,
+      "recall": 0.64,
+      "f1": 0.6994535519125684,
+      "support": 100
+    },
+    "snd_Deva": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    },
+    "tam_Taml": {
+      "precision": 1.0,
+      "recall": 0.99,
+      "f1": 0.9949748743718593,
+      "support": 100
+    },
+    "tel_Telu": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    },
+    "urd_Arab": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 100
+    }
+  },
+  "max_len": 128,
+  "batch": 16,
+  "epochs": 3,
+  "lr": 2e-05,
+  "frozen": "word_embeddings"
+}

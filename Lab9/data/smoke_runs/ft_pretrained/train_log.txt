@@ -1,0 +1,137 @@
+[2026-11-09 21:15:46,144 INFO] Parsed 2 corpora from -data.
+[2026-11-09 21:15:46,144 INFO] Get special vocabs from Transforms: {'src': [], 'tgt': []}.
+[2026-11-09 21:15:46,945 INFO] The first 10 tokens of the vocabs are:['<unk>', '<blank>', '<s>', '</s>', 'the', 'of', 'and', '.', 'in', 'is']
+[2026-11-09 21:15:46,947 INFO] The decoder start token is: <s>
+[2026-11-09 21:15:46,947 INFO] Building model...
+[2026-11-09 21:15:47,550 INFO] Switching model to float32 for amp/apex_amp
+[2026-11-09 21:15:47,550 INFO] Non quantized layer compute is fp32
+[2026-11-09 21:15:49,939 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(32000, 300, padding_idx=1)
+        )
+        (pe): PositionalEncoding()
+      )
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (transformer): ModuleList(
+      (0-3): 4 x TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=300, out_features=300, bias=False)
+          (linear_values): Linear(in_features=300, out_features=300, bias=False)
+          (linear_query): Linear(in_features=300, out_features=300, bias=False)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=300, out_features=300, bias=False)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=300, out_features=1200, bias=False)
+          (w_2): Linear(in_features=1200, out_features=300, bias=False)
+          (layer_norm): LayerNorm((300,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((300,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((300,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(32000, 300, padding_idx=1)
+        )
+        (pe): PositionalEncoding()
+      )
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (layer_norm): LayerNorm((300,), eps=1e-06, elementwise_affine=True)
+    (transformer_layers): ModuleList(
+      (0-3): 4 x TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=300, out_features=300, bias=False)
+          (linear_values): Linear(in_features=300, out_features=300, bias=False)
+          (linear_query): Linear(in_features=300, out_features=300, bias=False)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=300, out_features=300, bias=False)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=300, out_features=1200, bias=False)
+          (w_2): Linear(in_features=1200, out_features=300, bias=False)
+          (layer_norm): LayerNorm((300,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((300,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=300, out_features=300, bias=False)
+          (linear_values): Linear(in_features=300, out_features=300, bias=False)
+          (linear_query): Linear(in_features=300, out_features=300, bias=False)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=300, out_features=300, bias=False)
+        )
+        (layer_norm_2): LayerNorm((300,), eps=1e-06, elementwise_affine=True)
+      )
+    )
+  )
+  (generator): Linear(in_features=300, out_features=32000, bias=True)
+)
+[2026-11-09 21:15:49,940 INFO] encoder: 13925400
+[2026-11-09 21:15:49,940 INFO] decoder: 24999800
+[2026-11-09 21:15:49,940 INFO] * number of parameters: 38925200
+[2026-11-09 21:15:49,940 INFO] Trainable parameters = {'torch.float32': 38925200, 'torch.float16': 0, 'torch.uint8': 0, 'torch.int8': 0}
+[2026-11-09 21:15:49,940 INFO] Non trainable parameters = {'torch.float32': 0, 'torch.float16': 0, 'torch.uint8': 0, 'torch.int8': 0}
+[2026-11-09 21:15:49,940 INFO]  * src vocab size = 32000
+[2026-11-09 21:15:49,940 INFO]  * tgt vocab size = 32000
+[2026-11-09 21:15:49,942 INFO] Starting training on GPU: [0]
+[2026-11-09 21:15:49,942 INFO] Start training loop and validate every 20 steps...
+[2026-11-09 21:15:49,942 INFO] Scoring with: TransformPipe(FilterTooLongTransform(src_seq_length=150, tgt_seq_length=150))
+[2026-11-09 21:15:52,465 INFO] Weighted corpora loaded so far:
+			* corpus_1: 1
+[2026-11-09 21:15:56,787 INFO] Weighted corpora loaded so far:
+			* corpus_1: 1
+[2026-11-09 21:16:06,131 INFO] Weighted corpora loaded so far:
+			* corpus_1: 2
+[2026-11-09 21:16:06,482 INFO] Weighted corpora loaded so far:
+			* corpus_1: 2
+[2026-11-09 21:16:17,454 INFO] Weighted corpora loaded so far:
+			* corpus_1: 3
+[2026-11-09 21:16:17,655 INFO] Weighted corpora loaded so far:
+			* corpus_1: 3
+[2026-11-09 21:16:29,043 INFO] Weighted corpora loaded so far:
+			* corpus_1: 4
+[2026-11-09 21:16:29,261 INFO] Weighted corpora loaded so far:
+			* corpus_1: 4
+[2026-11-09 21:16:38,240 INFO] Weighted corpora loaded so far:
+			* corpus_1: 5
+[2026-11-09 21:16:38,455 INFO] Weighted corpora loaded so far:
+			* corpus_1: 5
+[2026-11-09 21:17:09,276 INFO] Step 10/   40; acc: 12.5; ppl: 15656.1; xent: 9.7; lr: 0.03482; sents:    5276; bsz: 1961/1579/132; 989/796 tok/s;     79 sec;
+[2026-11-09 21:17:18,693 INFO] Step 20/   40; acc: 13.7; ppl: 6002.5; xent: 8.7; lr: 0.02520; sents:    4615; bsz: 2001/1598/115; 8501/6786 tok/s;     89 sec;
+[2026-11-09 21:18:03,562 INFO] valid stats calculation
+                           took: 44.863667488098145 s.
+[2026-11-09 21:18:03,566 INFO] Train perplexity: 9667.45
+[2026-11-09 21:18:03,566 INFO] Train accuracy: 13.11
+[2026-11-09 21:18:03,566 INFO] Sentences processed: 9891
+[2026-11-09 21:18:03,567 INFO] Average bsz: 1981/1588/124
+[2026-11-09 21:18:03,567 INFO] Validation perplexity: 2996.2
+[2026-11-09 21:18:03,567 INFO] Validation accuracy: 19.8052
+[2026-11-09 21:18:03,616 INFO] Saving checkpoint data/smoke_runs/ft_pretrained/model_step_20.pt
+[2026-11-09 21:18:17,488 INFO] Step 30/   40; acc: 17.0; ppl: 2837.1; xent: 8.0; lr: 0.02074; sents:    4430; bsz: 2010/1535/111; 1368/1045 tok/s;    148 sec;
+[2026-11-09 21:18:26,001 INFO] Step 40/   40; acc: 17.1; ppl: 2112.8; xent: 7.7; lr: 0.01803; sents:    4588; bsz: 1924/1546/115; 9043/7267 tok/s;    156 sec;
+[2026-11-09 21:18:57,428 INFO] valid stats calculation
+                           took: 31.422409057617188 s.
+[2026-11-09 21:18:57,458 INFO] Train perplexity: 4914.72
+[2026-11-09 21:18:57,459 INFO] Train accuracy: 15.0549
+[2026-11-09 21:18:57,459 INFO] Sentences processed: 18909
+[2026-11-09 21:18:57,459 INFO] Average bsz: 1974/1565/118
+[2026-11-09 21:18:57,459 INFO] Validation perplexity: 1784.2
+[2026-11-09 21:18:57,459 INFO] Validation accuracy: 23.4224
+[2026-11-09 21:18:57,496 INFO] Saving checkpoint data/smoke_runs/ft_pretrained/model_step_40.pt

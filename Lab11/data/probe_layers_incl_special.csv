@@ -1,0 +1,40 @@
+task,layer,role,train_acc,test_acc,n_iter,converged
+sentence_length,0,embedding (reference),99.64,96.4,167,True
+sentence_length,1,encoder,99.33,95.68,198,True
+sentence_length,2,encoder,99.03,95.58,195,True
+sentence_length,3,encoder,99.07,95.66,226,True
+sentence_length,4,encoder,98.64,94.54,300,True
+sentence_length,5,encoder,97.95,94.32,288,True
+sentence_length,6,encoder,97.08,92.28,292,True
+sentence_length,7,encoder,96.08,91.24,294,True
+sentence_length,8,encoder,95.28,90.92,297,True
+sentence_length,9,encoder,93.32,88.74,288,True
+sentence_length,10,encoder,90.76,87.41,299,True
+sentence_length,11,encoder,88.94,84.93,307,True
+sentence_length,12,encoder,87.67,83.85,267,True
+bigram_shift,0,embedding (reference),55.02,50.16,80,True
+bigram_shift,1,encoder,59.69,56.54,132,True
+bigram_shift,2,encoder,72.27,71.5,104,True
+bigram_shift,3,encoder,83.91,83.24,128,True
+bigram_shift,4,encoder,87.3,87.08,80,True
+bigram_shift,5,encoder,88.88,88.44,71,True
+bigram_shift,6,encoder,90.19,89.8,69,True
+bigram_shift,7,encoder,91.04,90.46,74,True
+bigram_shift,8,encoder,91.78,91.36,75,True
+bigram_shift,9,encoder,91.41,90.76,69,True
+bigram_shift,10,encoder,90.72,89.98,78,True
+bigram_shift,11,encoder,90.24,89.6,69,True
+bigram_shift,12,encoder,89.18,88.94,80,True
+subj_number,0,embedding (reference),84.49,84.06,96,True
+subj_number,1,encoder,85.39,85.08,102,True
+subj_number,2,encoder,85.67,85.52,74,True
+subj_number,3,encoder,86.42,86.32,116,True
+subj_number,4,encoder,87.17,87.3,103,True
+subj_number,5,encoder,88.74,88.8,115,True
+subj_number,6,encoder,89.18,88.56,98,True
+subj_number,7,encoder,89.69,89.2,92,True
+subj_number,8,encoder,89.2,88.82,67,True
+subj_number,9,encoder,89.34,89.14,75,True
+subj_number,10,encoder,88.74,88.48,62,True
+subj_number,11,encoder,88.06,87.7,61,True
+subj_number,12,encoder,87.59,87.46,74,True

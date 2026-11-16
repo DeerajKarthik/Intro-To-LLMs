@@ -1,0 +1,63 @@
+# OpenNMT-py v3 config: English -> Tamil, ilci (BPCC) subset
+# Subword segmentation (SentencePiece) is applied on the fly via `transforms`,
+# using the two SP models trained separately on train.en / train.ta.
+
+## Data
+data:
+    corpus_1:
+        path_src: data/train.en
+        path_tgt: data/train.ta
+        transforms: [sentencepiece, filtertoolong]
+    valid:
+        path_src: data/val.en
+        path_tgt: data/val.ta
+        transforms: [sentencepiece, filtertoolong]
+
+save_data: data/run/samples
+src_subword_model: data/en_sp.model
+tgt_subword_model: data/ta_sp.model
+src_vocab: data/run/vocab.src
+tgt_vocab: data/run/vocab.tgt
+src_vocab_size: 8000
+tgt_vocab_size: 8000
+src_seq_length: 150
+tgt_seq_length: 150
+
+## Model
+save_model: data/run/model
+save_checkpoint_steps: 1000
+keep_checkpoint: 3
+seed: 42
+train_steps: 10000
+valid_steps: 1000
+warmup_steps: 4000
+report_every: 200
+
+encoder_type: transformer
+decoder_type: transformer
+enc_layers: 4
+dec_layers: 4
+heads: 4
+hidden_size: 256
+word_vec_size: 256
+transformer_ff: 1024
+dropout: 0.1
+attention_dropout: 0.1
+position_encoding: true
+
+batch_type: tokens
+batch_size: 4096
+valid_batch_size: 32
+accum_count: 2
+optim: adam
+adam_beta2: 0.998
+decay_method: noam
+learning_rate: 2.0
+max_grad_norm: 0
+label_smoothing: 0.1
+param_init: 0.0
+param_init_glorot: true
+normalization: tokens
+
+world_size: 1
+gpu_ranks: [0]
